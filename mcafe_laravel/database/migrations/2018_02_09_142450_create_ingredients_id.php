@@ -14,8 +14,8 @@ class CreateIngredientsId extends Migration
     public function up()
     {
         Schema::table('ingredients', function (Blueprint $table) {
-    $table->renameColumn('idIngredients', 'id');
-});
+            $table->renameColumn('idIngredients', 'id');
+        });
     }
 
     /**
@@ -25,8 +25,8 @@ class CreateIngredientsId extends Migration
      */
     public function down()
     {
-    Schema::table('ingredients', function (Blueprint $table) {
-    $table->renameColumn('id', 'idIngredients');
-});
+        Schema::table('ingredients', function (Blueprint $table) {
+            $table->renameColumn('id', 'idIngredients');
+        });
     }
 }
