@@ -20,12 +20,14 @@ Details des Recettes
 				{{-- dans la mesure ou l'ingredient est verifie. --}}
 				Ingredient: {{$detail->ingredient->Nom}}
 				@endif
+
+{{-- Formulaire du bouton supprimer --}}
 	<form action="{{route('ingredients.destroy',['id'=>$detail->idRecette])}}" class="form-horizontal" method="POST">
 					{{csrf_field()}}
 		<input type="hidden" name="_method" value="delete"></input>
-					{{-- permet de basculer le post en delete --}}
+			{{-- permet de basculer le post en delete --}}
 
-					<!-- Button supprimer-->
+			<!-- Button supprimer-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for=""></label>
 					<div class="col-md-4">

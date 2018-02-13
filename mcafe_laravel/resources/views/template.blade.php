@@ -100,11 +100,13 @@
                <div class="title m-b-md">
                     @yield('titre')
                     @yield('orderbutton')
-               </div> 
 
+               </div> 
+                 @yield('image')
                  @yield('contenu')
                  @yield('button')
                 @yield('forme')
+
             </div>
     </body>
 </html>

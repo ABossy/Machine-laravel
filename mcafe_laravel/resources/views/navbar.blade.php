@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="#">Machine Cafe Astrid</a>
         </div>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/bienvenue">Home</a></li>
             <li><a href="/1">Boissons</a></li>
             <li><a href="/2">Ingredients</a></li>
             <li><a href="/3">Monnaie</a></li>

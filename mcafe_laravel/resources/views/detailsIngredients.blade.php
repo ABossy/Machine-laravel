@@ -39,7 +39,7 @@ Details des Ingredients
 @endsection
 
  @section('forme')
- <form action='{{route('ingredients.modif',['id'=> $ingredients-> idIngredients])}}' method="POST">
+ <form action='{{route('ingredients.modif',['id'=> $ingredients->id])}}' method="POST">
     {{csrf_field()}}
   {{--   {{method_field('UPDATE')}} --}}
     <input type="hidden" name="_method" value="put"></input>

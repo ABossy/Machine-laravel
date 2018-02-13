@@ -15,8 +15,8 @@ class CreateRecettesTable extends Migration
     {
         Schema::create('recettes', function (Blueprint $table) {
             $table->increments('idRecette');
-            $table->integer('idBoisson');
-            $table->integer('idIngredient');
+            $table->integer('idBoisson')->unsigned();
+            $table->integer('idIngredient')->unsigned();
             $table->integer('nbdose');
             $table->timestamps();
         });

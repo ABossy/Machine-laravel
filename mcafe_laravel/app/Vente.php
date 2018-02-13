@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Boisson;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Vente extends Model
@@ -12,7 +13,7 @@ class Vente extends Model
 
 	public function boisson()
 	{
-		return $this->hasmany('App\Boisson');
+		return $this->belongsTo('App\Boisson');
 	}
 
 }

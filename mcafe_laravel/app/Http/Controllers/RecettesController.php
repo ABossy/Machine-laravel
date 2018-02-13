@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Boisson;
 use App\Ingredient; //je lie mon controller aux differents models que j'utilise.
 use App\Recette;
+use App\Vente;
 
 
 

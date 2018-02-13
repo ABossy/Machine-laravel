@@ -4,6 +4,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Recette;
 use App\Vente;
+use App\Ingredient;
+use App\User;
 
 class Boisson extends Model{
 	protected $table = 'boissons';
@@ -17,7 +19,8 @@ class Boisson extends Model{
 
 	public function vente()
 	{
-		return $this->hasOne('App\Vente');
+		return $this->hasmany('App\Vente');
 	}
 
+	
 }
