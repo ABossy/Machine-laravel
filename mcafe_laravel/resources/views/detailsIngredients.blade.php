@@ -11,6 +11,7 @@ Details des Ingredients
 <tr><td><h4>ID: {{$ingredients-> id}}<br>
 	Nom: {{$ingredients-> Nom}} <br> 
 	Stock:  {{$ingredients-> Stock}} <br> code: {{$ingredients-> code}}
+
 </h4></tr></td>
     
 </table>
@@ -19,7 +20,7 @@ Details des Ingredients
 {{-- affichage de mon id, nom et prix sur ma page details --}}
 
 @section('button')
-	<form class="form-horizontal" method="POST">
+	<form action='{{route('ingredients.destroy',['id'=> $ingredients->id])}}' class="form-horizontal" method="POST">
 		{{csrf_field()}}
 		<input type="hidden" name="_method" value="delete"></input>
 	 {{-- permet de basculer le post en delete --}}
