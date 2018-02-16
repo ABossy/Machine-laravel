@@ -17,6 +17,6 @@ class detailsBoissonsController extends Controller
 	}
 
 	//permet de lister les boissons en fonction de l'id sur la page details.
-    $test = "test";
+
 }
 
