@@ -22,7 +22,7 @@ Details des Recettes
 				@endif
 
 {{-- Formulaire du bouton supprimer --}}
-	<form action="{{route('ingredients.destroy',['id'=>$detail->idRecette])}}" class="form-horizontal" method="POST">
+	<form action="{{route('lignerecette.destroy',['id'=>$detail->idRecette])}}" class="form-horizontal" method="POST">
 					{{csrf_field()}}
 		<input type="hidden" name="_method" value="delete"></input>
 			{{-- permet de basculer le post en delete --}}
@@ -59,7 +59,7 @@ Details des Recettes
 		selection</option>
 @foreach ($afficheBoissons as $element)
 		<option value= "{{ $element->id}}" label="{{ 
-			$element->Nom}}"</option>
+			$element->Nom}}"></option>
 @endforeach
 		</select><br>
 

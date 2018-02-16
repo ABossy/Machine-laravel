@@ -16,7 +16,7 @@ class detailsBoissonsController extends Controller
 		return view('detailsBoissons',compact('boissons'));
 	}
 
-	
-
+	//permet de lister les boissons en fonction de l'id sur la page details.
+    $test = "test";
 }
 

@@ -18,7 +18,7 @@ Route::get('7','detailsBoissonsController@index');
 
 // diriger les urls aux controllers
 
-Route::get('/boisson/{id}','detailsBoissonsController@index')->name('boissons.show');
+Route::get('details/boisson/{id}','detailsBoissonsController@index')->name('boissons.show');
 // Route liée à mon controller qui affiche les details en fonction de l'id.
 Route::post('1','BoissonsController@store')->name('boisson.store');
 // Route liée à mon controller qui récupere les infos du get.
@@ -43,7 +43,7 @@ Route::get('/prixdown', 'BoissonsController@prixdown')->name('prixdown');
 
 // lien INGREDIENTS:
 
-Route::get('ingredients/{id}','detailsIngredientsController@index')->name('listeingredients.show');
+Route::get('details/ingredients/{id}','detailsIngredientsController@index')->name('listeingredients.show');
 // Route liée à mon controller qui affiche les details en fonction de l'id.
 
 Route::post('2','IngredientsController@store')->name('ingredients.store');
@@ -67,13 +67,15 @@ Route::get('/liste/boissons/{id}','RecettesController@show')->name('boissons.det
 Route::delete('/liste/boissons/{id}','RecettesController@destroy')->name('recettes.destroy');
 // permet de tout supprimer 
 
-Route::delete('/liste/recette/{id}','RecettesController@destroyIngredient')->name('ingredients.destroy');
+Route::delete('/liste/recette/{id}','RecettesController@destroyIngredient')->name('lignerecette.destroy');
 // permet de supprimer en fonction de l'ingredient de la recette.
+
+
 
 // ROUTE VENTES //
 
 Route::get('5','VentesController@show')->name('vente.details');
-
+//permet d'afficher les ventes de la bdd
 Route::delete('5/ventes/{id}', 'VentesController@destroyVente')->name('ventes.destroy');
 
 //ROUTES PROTEGEES//
