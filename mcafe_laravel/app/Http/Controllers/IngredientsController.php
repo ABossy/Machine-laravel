@@ -28,6 +28,7 @@ class IngredientsController extends Controller
         return view('Ingredients',compact('ingredientStock'));
     }
 
+    //affiche la liste des ingredients.
 
     public function store(Request $request){
         $donnees = new Ingredient;
@@ -44,7 +45,7 @@ class IngredientsController extends Controller
     public function destroy($id){
         $ingredients = Ingredient::find($id);
         $ingredients->delete();
-     
+  
      return redirect('2');
 
     } // Supprimer un ingredient

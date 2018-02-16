@@ -21,7 +21,7 @@ class WelcomeController extends Controller {
         $afficheUsers = User::all();
         return view('bienvenue',['commandes'=>$commandes, 'afficheUsers'=>$afficheUsers]);
     }
-
+    // permet de récuperer les données pour les champs du formulaire.
 
     public function store(Request $request){
     	$boisson = Boisson::find($request->idBoisson);
