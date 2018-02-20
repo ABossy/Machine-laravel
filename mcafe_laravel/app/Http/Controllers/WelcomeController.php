@@ -13,36 +13,115 @@ class WelcomeController extends Controller {
     public function index()
     {
 
-	return view('home');
-	}
+     return view('home');
+ }
 
-	 public function indexVente(){
-        $commandes = Boisson::all();
-        $afficheUsers = User::all();
-        return view('bienvenue',['commandes'=>$commandes, 'afficheUsers'=>$afficheUsers]);
+
+ public function indexVente(){
+    $commandes = Boisson::all();
+    $afficheUsers = User::all();
+    return view('bienvenue',['commandes'=>$commandes, 'afficheUsers'=>$afficheUsers]);
+}
+        // permet de récuperer les données pour les champs du formulaire.
+
+public function store(Request $request){
+ $boisson = Boisson::find($request->idBoisson);
+        	// dd($request);
+
+ $user = User::find($request->idUser);
+ $nbSucre = $request->nbSucre;
+
+ $donnees = new Vente;
+ $donnees->nomUser = $user->name;
+ $donnees->nomBoisson = $boisson->Nom;
+ $donnees->boissons_id = $boisson->id;
+ $donnees->Prix = $boisson->Prix;
+ $donnees->nbSucre = $nbSucre;
+    		$donnees->save();//sauvegarde en base de donnees.
+
+
+    // Nouvelle création vente
+
+         $recettes = Recette::where('idBoisson', request('idBoisson'))->get();
+           // on stock dans recettes la recherche de la request idboisson
+         foreach ($recettes as $recette) {
+             $nbdose = $recette->nbdose;
+             $ingredients = Ingredient::where('id', 
+                $recette->idIngredient)->get();
+             foreach ($ingredients as $ingredient) {
+                 $ingredient->Stock = $ingredient->Stock - $nbdose;
+                 $ingredient->save();
+             }
+
+                     //pour chaque recette on souhaite stocker la recherche du champ nombre de dose ainsi que l'ingredient associé a la recette.
+
+                    //pour chaque ingredients on va recuperer les stock existant et le soustraire à la nbdose.
+         }
+
+         $nbSucre = Ingredient::where('Nom','sucre' )->get()->first();
+         $nbSucre->Stock = $nbSucre->Stock - request('nbSucre');
+         $nbSucre->save();
+
+                    //on va chercher la donnée sucre de la table ingredient.
+                    // on soustrait le stock sucre à la request du sucre.
+         return redirect()->route('vente.details',compact('donnees'));
+
+     }
+
+     
+
+    // Page Connexion Guest
+
+     public function indexGuest(){
+        $guestorder = Boisson::all();
+        return view('guest',compact('guestorder'));
     }
-    // permet de récuperer les données pour les champs du formulaire.
+        // permet de récuperer les données pour les champs du formulaire.
 
-    public function store(Request $request){
-    	$boisson = Boisson::find($request->idBoisson);
-    	// dd($request);
+    public function storeGuest(Request $request){
+        $guestdrink = Boisson::find($request->idBoisson);
+            // dd($request);
+        $nbSucre = $request->nbSucre;
 
-    	$user = User::find($request->idUser);
-    	$nbSucre = $request->nbSucre;
+        $donnees = new Vente;
+        $donnees->nomBoisson = $guestdrink->Nom;
+        $donnees->boissons_id = $guestdrink->id;
+        $donnees->Prix = $guestdrink->Prix;
+        $donnees->nbSucre = $nbSucre;
+            $donnees->save();//sauvegarde en base de donnees.   
 
-    	$donnees = new Vente;
-    	$donnees->nomUser = $user->name;
-    	$donnees->nomBoisson = $boisson->Nom;
-    	$donnees->boissons_id = $boisson->id;
-    	$donnees->Prix = $boisson->Prix;
-    	$donnees->nbSucre = $nbSucre;
-		$donnees->save();//sauvegarde en base de donnees.
+            $guestorder = Boisson::all();
 
 
-		return redirect()->route('vente.details',compact('donnees'));
+            $recettes = Recette::where('idBoisson', request('idBoisson'))->get();
+           // on stock dans recettes la recherche de la request idboisson
+            foreach ($recettes as $recette) {
+             $nbdose = $recette->nbdose;
+             $ingredients = Ingredient::where('id', 
+                $recette->idIngredient)->get();
+             foreach ($ingredients as $ingredient) {
+                 $ingredient->Stock = $ingredient->Stock - $nbdose;
+                 $ingredient->save();
+             }
 
-	} // Nouvelle création vente
+                     //pour chaque recette on souhaite stocker la recherche du champ nombre de dose ainsi que l'ingredient associé a la recette.
 
-	
-}	
+                    //pour chaque ingredients on va recuperer les stock existant et le soustraire à la nbdose.
+         }
+
+         $nbSucre = Ingredient::where('Nom','sucre' )->get()->first();
+         $nbSucre->Stock = $nbSucre->Stock - request('nbSucre');
+         $nbSucre->save();
+
+                    //on va chercher la donnée sucre de la table ingredient.
+                    // on soustrait le stock sucre à la request du sucre.
+
+
+
+         return view('guest',compact('guestorder'));
+
+        } // Nouvelle création vente
+
+
+    }	
 

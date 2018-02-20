@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/5';
+    protected $redirectTo = ('/bienvenue');
 
     /**
      * Create a new controller instance.
@@ -69,4 +69,7 @@ class RegisterController extends Controller
 
         ]);
     }
+
+
+
 }
