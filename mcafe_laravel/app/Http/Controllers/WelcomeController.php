@@ -76,6 +76,7 @@ public function store(Request $request){
         $guestorder = Boisson::all();
         return view('guest',compact('guestorder'));
     }
+
         // permet de récuperer les données pour les champs du formulaire.
 
     public function storeGuest(Request $request){
@@ -112,6 +113,9 @@ public function store(Request $request){
          $nbSucre = Ingredient::where('Nom','sucre' )->get()->first();
          $nbSucre->Stock = $nbSucre->Stock - request('nbSucre');
          $nbSucre->save();
+
+    // permet de récuperer les données pour les champs du formulaire.
+
 
                     //on va chercher la donnée sucre de la table ingredient.
                     // on soustrait le stock sucre à la request du sucre.

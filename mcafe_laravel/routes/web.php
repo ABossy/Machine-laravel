@@ -22,9 +22,11 @@ Route::post('/bienvenue', 'WelcomeController@store')->name('commande.store');
 Route::group(['middleware'=>'admin'], function(){
 //BOISSONS
 
+
 Route::get('1', 'BoissonsController@index')
 ->name('boisson.index');
 // vue Boisson
+
 Route::get('details/boisson/{id}','detailsBoissonsController@index')->name('boissons.show');
 // Route liée à mon controller qui affiche les details en fonction de l'id.
 Route::post('1','BoissonsController@store')->name('boisson.store');
@@ -43,8 +45,15 @@ Route::get('/prixdown', 'BoissonsController@prixdown')->name('prixdown');
 
 // INGREDIENTS:
 
+
 Route::get('2', 'IngredientsController@index');
 // vue ingredients
+
+
+
+// lien INGREDIENTS:
+
+
 Route::get('details/ingredients/{id}','detailsIngredientsController@index')->name('listeingredients.show');
 // Route liée à mon controller qui affiche les details en fonction de l'id.
 Route::post('2','IngredientsController@store')->name('ingredients.store');
@@ -73,12 +82,16 @@ Route::get('/liste/boissons/{id}','RecettesController@show')->name('boissons.det
 //affiche le detail des boissons en fonction de l'id sur la page details recette.
 Route::delete('/liste/boissons/{id}','RecettesController@destroy')->name('recettes.destroy');
 // permet de tout supprimer 
+
+
 Route::delete('/liste/recette/{id}','RecettesController@destroyIngredient')->name('lignerecette.destroy');
 // permet de supprimer en fonction de l'ingredient de la recette.
 
 
 
 // ROUTE VENTES //
+
+
 
 
 Route::get('5','VentesController@show')->name('vente.details');
