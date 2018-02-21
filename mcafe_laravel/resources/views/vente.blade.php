@@ -6,16 +6,18 @@ Liste des ventes
 @endsection
 
 @section('contenu')
+<div id="" style="overflow-y:scroll; height:600px;">
 <table class="table table-striped col-md-12 table-hover">
 	@foreach($afficheVentes as $afficheVente)
 	<tr>
 		<td>
 			<h4>
-				<strong>Date</strong>:{{$afficheVente-> created_at}}<br>
-				User :<strong>{{$afficheVente-> nomUser}}</strong><br>
-		Vente N°: <strong>{{$afficheVente-> idVente}}</strong><br><strong>{{$afficheVente-> nomBoisson}}</strong><br>
-		Sucre: {{$afficheVente-> nbSucre}}<br>
-		Prix: {{$afficheVente-> Prix}}
+				<strong>Date</strong>:{{$afficheVente-> created_at}}
+				<strong>{{$afficheVente-> nomUser}}</strong><br>
+		<strong>Vente N°:{{$afficheVente-> idVente}}<br></strong>
+		<strong>{{$afficheVente-> nomBoisson}}</strong><br>
+		<strong>Sucre: </strong>{{$afficheVente-> nbSucre}}
+		<strong>Prix:</strong>{{$afficheVente-> Prix}} cts
 
 		<form action="{{route('ventes.destroy',['id'=>$afficheVente->idVente])}}" class="form-horizontal" method="POST">
 			{{csrf_field()}}
@@ -39,6 +41,7 @@ Liste des ventes
 	
 	@endforeach
 </table>
+</div>
 @endsection
 
 {{-- permet d'afficher la liste des ventes sur ma view  --}}

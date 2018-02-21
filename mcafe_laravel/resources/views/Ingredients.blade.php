@@ -6,6 +6,7 @@ Liste des Ingredients
 @endsection
 
 @section('contenu')
+<div id="" style="overflow-y:scroll; height:480px;">
 <table class="table table-striped col-md-12 table-hover">
 
 @foreach($ingredientStock as $keys)
@@ -20,6 +21,7 @@ Liste des Ingredients
 @endforeach
 
 </table>
+</div>
 @endsection
 
 

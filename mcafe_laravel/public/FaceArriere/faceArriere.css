@@ -1,0 +1,179 @@
+/* #machine
+#ecran
+#afficheur
+#btnCafe
+#btnChocolat
+#btnCappuccino
+#btnThe
+#imgSucre
+#btnMoinsSucre
+#btnPlusSucre 
+#sucres
+#btnPay
+#btnCancel
+#btnMaintenance
+#fente
+#renduMonnaie  IDs reservés face avant*/
+
+#machineArriere{
+    background-image: url('images/backgroundArriere.png');
+    background-repeat: no-repeat;
+    height: 1024px;
+    width: 768px;
+    position: relative;
+    margin: auto;
+
+}
+
+/* gestion du stock des ingrédients */ 
+
+#coffee{
+    top:140px;
+    left:55px;
+    position:absolute;
+    width: 50px;
+    height: 150px;
+    background-color:#663300;
+    border-radius: 15px;
+}
+
+#chocolat{
+    top:140px;
+    left:180px;
+    position:absolute;
+    width: 50px;
+    height: 150px;
+    background-color:#4c4b45;
+    border-radius: 15px;
+}
+
+#the{
+    top:140px;
+    left:300px;
+    position:absolute;
+    width: 50px;
+    height: 150px;
+    background-color:#6fEE84;
+    border-radius: 15px;
+}
+
+#sugar{
+    top:140px;
+    left:420px;
+    position:absolute;
+    width: 50px;
+    height: 150px;
+    background-color:#c2c4b2;
+    border-radius: 15px;
+}
+
+#water{
+    top:140px;
+    left:540px;
+    position:absolute;
+    width: 50px;
+    height: 150px;
+    background-color:#3399ff;
+    border-radius: 15px;
+}
+#milk{
+    top:140px;
+    left:680px;
+    position:absolute;
+    width: 50px;
+    height: 150px;
+    background-color:white;
+    border-radius: 15px;
+}
+
+#ingredients{
+    position: absolute;
+    top: 290px;
+    left: 38px;
+
+}
+
+#btnResetArriere{
+    position: absolute;
+    top: 493px;
+    left: 588px;
+}
+
+#accessoires{
+    position: absolute;
+    top: 504px;
+    left: 40px;
+}
+
+/* gestion du stock de pièces de monnaie */ 
+
+#piecesArriere{
+    position: absolute;
+    top: 722px;
+    left: 66px;
+}
+
+.img5ct{
+    height: 20px;
+    width:  60px;
+}
+.img10ct{
+    height: 22px;
+    width:  60px;
+}
+
+.img20ct{
+    height: 22px;
+    width:  60px;
+}
+.img50ct{
+    height: 23px;
+    width:  60px;
+}
+
+.img1euro{
+    height: 25px;
+    width:  62px;
+}
+
+.img2euro{
+    height: 26px;
+    width:  62px;
+}
+.coin5ct{
+  margin-bottom: -22px;
+  position: relative;
+}
+
+.coin10ct{
+  margin-bottom: -22px;
+  position: relative;
+}
+
+.coin20ct{
+  margin-bottom: -22px;
+  position: relative;
+}
+.coin50ct{
+  margin-bottom: -22px;
+  position: relative;
+}
+.coin1euro{
+  margin-bottom: -22px;
+  position: relative;
+}
+.coin2euro{
+  margin-bottom: -22px;
+  position: relative;
+}
+div {
+}
+
+td{
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}

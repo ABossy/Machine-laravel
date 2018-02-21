@@ -1,4 +1,4 @@
-@extends('guestTemplate')
+@extends('Template')
 
 @section('titre')
 Machine à Café <br>

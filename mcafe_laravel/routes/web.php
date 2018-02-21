@@ -1,5 +1,10 @@
 <?php
 
+//JavaScript
+
+Route::get('/javascript','WelcomeController@indexJs');
+
+
 //Page ACCUEIL 
 
 Route::get('/', 'WelcomeController@indexGuest');
@@ -16,7 +21,7 @@ Route::group(['middleware'=>'auth'], function(){
 
 Route::get('/bienvenue', 'WelcomeController@indexVente');
 Route::post('/bienvenue', 'WelcomeController@store')->name('commande.store');
-
+Route::get('5','VentesController@show')->name('vente.details');
 });
 
 Route::group(['middleware'=>'admin'], function(){
@@ -92,18 +97,18 @@ Route::delete('/liste/recette/{id}','RecettesController@destroyIngredient')->nam
 // ROUTE VENTES //
 
 
-
-
-Route::get('5','VentesController@show')->name('vente.details');
 //permet d'afficher les ventes de la bdd
 Route::delete('5/ventes/{id}', 'VentesController@destroyVente')->name('ventes.destroy');
+
+});
 
 //ROUTES PROTEGEES//
 
 Route::post('/inscription','UsersController@store');
 // route du user test
 
-});
+
+
 // AUTHENTIFICATION //
 Auth::routes();
 

@@ -12,10 +12,16 @@ class WelcomeController extends Controller {
 
     public function index()
     {
-
+        
      return view('home');
  }
 
+
+     public function indexJs()
+    {
+        //retourne la vue Javascript
+     return view('mcjs');
+ }
 
  public function indexVente(){
     $commandes = Boisson::all();
@@ -127,5 +133,7 @@ public function store(Request $request){
         } // Nouvelle création vente
 
 
-    }	
+
+
+}	
 
