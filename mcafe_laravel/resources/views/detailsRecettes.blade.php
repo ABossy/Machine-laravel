@@ -72,8 +72,7 @@ Details des Recettes
 @endforeach
 			</select><br>
 
-			<input id="quantite" name="nbdose" type="text" placeholder="Qt 
-			Ingrédient" class="form-control input-md"><br>
+			<input id="quantite" name="nbdose" type="number" placeholder="Qt Ingrédient" class="form-control input-md" required=""><br>
 
 			<input class="btn btn-success" type="submit" name="submit" 
 			value="Ajouter">

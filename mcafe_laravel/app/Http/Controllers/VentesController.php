@@ -27,6 +27,7 @@ class VentesController extends Controller
 		// dd($afficheVentes);
 		return view('vente',compact('afficheVentes'));
 		}
+
 	}
 
 	public function destroyVente($id){
@@ -37,7 +38,15 @@ class VentesController extends Controller
 
 	
 	
-	
-
+	public function searchNom(Request $request){
+			$afficheVentes=Vente::where('nomUser',request('recherche'))->orWhere('nomBoisson',request('recherche'))->get();
+			
+			return view('vente',compact('afficheVentes'));
+		
+			//permet de rechercher 2 champs d'une table et de les afficher en fonction de la requete saisie dans le formulaire. (orWhere = ou)
+		}
 
 }
+
+	
+

@@ -49,7 +49,7 @@ Details des Boissons
                  for="codeboisson">code</label>
                  <div class="col-md-12">
                      <input id="codeboisson" name="codeboisson" 
-                     type="text" placeholder="code de la boisson" class="form-control 
+                     type="text" placeholder="code de la boisson" size= "3" maxlength="3" class="form-control 
                      input-md" value="{{$boissons->code}}">
             {{-- permet de garder en memoire la valeur code --}}
                  </div>
@@ -62,7 +62,7 @@ Details des Boissons
             for="nomboisson">Nom</label>
             <div class="col-md-12">
                 <input id="nomboisson" name="nomboisson" 
-                 type="text" placeholder="Nom de la boisson" class="form-control 
+                 type="text" placeholder="Nom de la boisson" maxlength="15"class="form-control 
                  input-md" value="{{$boissons->Nom}}">
                {{-- permet de garder en memoire la valeur Nom --}}
                  </div>
@@ -74,7 +74,7 @@ Details des Boissons
                  for="prixboisson">Prix</label>
                  <div class="col-md-12">
                      <input id="prixboisson" name="prixboisson" 
-                     type="text" placeholder="Prix de la boisson" class="form-control 
+                     type="number" min="1" max="" placeholder="Prix de la boisson" class="form-control 
                      input-md" value="{{$boissons->Prix}}">
             {{-- permet de garder en memoire la valeur Prix --}}
                  </div>

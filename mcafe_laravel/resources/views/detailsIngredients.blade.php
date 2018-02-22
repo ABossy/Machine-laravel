@@ -52,7 +52,7 @@ Details des Ingredients
                  for="codeIngredients">code</label>
                  <div class="col-md-12">
                      <input id="codeingredients" name="codeIngredients" 
-                     type="text" placeholder="code de l'ingredient" class="form-control 
+                     type="text" size= "3" maxlength="3" placeholder="code de l'ingredient" class="form-control 
                      input-md" value="{{$ingredients->code}}">
             {{-- permet de garder en memoire la valeur code --}}
                  </div>
@@ -65,7 +65,7 @@ Details des Ingredients
             for="nomboisson">Nom</label>
             <div class="col-md-12">
                 <input id="nomingredients" name="nomingredients" 
-                 type="text" placeholder="Nom de l'ingredients" class="form-control 
+                 type="text" placeholder="Nom de l'ingredients" maxlength="15" class="form-control 
                  input-md" value="{{$ingredients->Nom}}">
                {{-- permet de garder en memoire la valeur Nom --}}
                  </div>
@@ -77,7 +77,7 @@ Details des Ingredients
                  for="stockingredients">Stock</label>
                  <div class="col-md-12">
                      <input id="stockingredients" name="stockingredients" 
-                     type="text" placeholder="Stock de l'ingredient" class="form-control 
+                     type="number" min="1" max="" placeholder="Stock de l'ingredient" class="form-control 
                      input-md" value="{{$ingredients->Stock}}">
             {{-- permet de garder en memoire la valeur Prix --}}
                  </div>

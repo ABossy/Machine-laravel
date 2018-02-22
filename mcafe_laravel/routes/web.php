@@ -22,6 +22,7 @@ Route::group(['middleware'=>'auth'], function(){
 Route::get('/bienvenue', 'WelcomeController@indexVente');
 Route::post('/bienvenue', 'WelcomeController@store')->name('commande.store');
 Route::get('5','VentesController@show')->name('vente.details');
+//permet d'afficher les ventes de la bdd
 });
 
 Route::group(['middleware'=>'admin'], function(){
@@ -36,7 +37,7 @@ Route::get('details/boisson/{id}','detailsBoissonsController@index')->name('bois
 // Route liée à mon controller qui affiche les details en fonction de l'id.
 Route::post('1','BoissonsController@store')->name('boisson.store');
 // Route liée à mon controller qui récupere les infos du get.
-Route::delete('/boisson/{id}','BoissonsController@destroy')->name('boisson.destroy');
+Route::delete('details/boisson/{id}','BoissonsController@destroy')->name('boisson.destroy');
 // Route liée a mon controller boisson qui supprime la boisson. 
 Route::put('/modif/{id}','BoissonsController@edit')->name('boisson.modif');
 // Route liée a mon controller boisson qui modifie la boisson.
@@ -53,11 +54,6 @@ Route::get('/prixdown', 'BoissonsController@prixdown')->name('prixdown');
 
 Route::get('2', 'IngredientsController@index');
 // vue ingredients
-
-
-
-// lien INGREDIENTS:
-
 
 Route::get('details/ingredients/{id}','detailsIngredientsController@index')->name('listeingredients.show');
 // Route liée à mon controller qui affiche les details en fonction de l'id.
@@ -96,10 +92,10 @@ Route::delete('/liste/recette/{id}','RecettesController@destroyIngredient')->nam
 
 // ROUTE VENTES //
 
-
-//permet d'afficher les ventes de la bdd
+Route::post('5/search','VentesController@searchNom');
+// permet de rechercher par nom les ventes.
 Route::delete('5/ventes/{id}', 'VentesController@destroyVente')->name('ventes.destroy');
-
+//permet de supprimer les ventes
 });
 
 //ROUTES PROTEGEES//

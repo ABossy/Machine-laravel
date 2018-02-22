@@ -29,24 +29,13 @@ Liste des Ingredients
  <form action='{{route('ingredients.store')}}' method="POST">
     {{csrf_field()}}
 
-              <!-- champ stock-->
-             <div class="form-group">
-                 <label class="col-md-12 control-label" 
-                 for="prixboisson">Stock</label>
-                 <div class="col-md-12">
-                     <input id="prixingredient" name="prixingredient" 
-                     type="text" placeholder="Stock de l'ingrédient" class="form-control 
-                     input-md" required="">
-
-                 </div>
-             </div>
 <!-- champ nom-->
              <div class="form-group">
                  <label class="col-md-12 control-label" 
                  for="nomboisson">Nom</label>
                  <div class="col-md-12">
                      <input id="nomingredient" name="nomingredient" 
-                     type="text" placeholder="Nom de l'ingrédient" class="form-control 
+                     type="text" maxlength="15" placeholder="Nom de l'ingrédient" class="form-control 
                      input-md" required="">
 
                  </div>
@@ -57,8 +46,19 @@ Liste des Ingredients
                  for="codeingredient">code</label>
                  <div class="col-md-12">
                      <input id="codeingredient" name="codeingredient" 
-                     type="text" placeholder="code de l'ingredient" class="form-control 
-                     input-md" >
+                     type="text" size= "3" maxlength="3" placeholder="code de l'ingredient" class="form-control 
+                     input-md" required="">
+
+                 </div>
+             </div>
+    <!-- champ stock-->
+             <div class="form-group">
+                 <label class="col-md-12 control-label" 
+                 for="stockingredient">Stock</label>
+                 <div class="col-md-12">
+                     <input id="stockingredient" name="prixingredient" 
+                     type="number" min="1" max="" placeholder="Stock de l'ingrédient" class="form-control 
+                     input-md" required="">
 
                  </div>
              </div>

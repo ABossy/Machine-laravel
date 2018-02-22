@@ -6,6 +6,14 @@ Liste des ventes
 @endsection
 
 @section('contenu')
+<div class="recherche_p">
+	<form action="/5/search" id="searchthis" method="post">
+		{{csrf_field()}}
+		<input id="search" name="recherche" type="text" placeholder="Rechercher" />
+		<input id="search-btn" type="submit" value="Rechercher" />
+	</form>
+</div><br>
+{{-- formulaire recherche --}}
 <div id="" style="overflow-y:scroll; height:600px;">
 <table class="table table-striped col-md-12 table-hover">
 	@foreach($afficheVentes as $afficheVente)

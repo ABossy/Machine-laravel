@@ -36,26 +36,14 @@
     <form action='{{route('boisson.store')}}' method="POST">
     {{csrf_field()}}
 
-    <!-- champ prix-->
-        <div class="form-group">
-            <label class="col-md-12 control-label"
-                   for="prixboisson">Prix</label>
-            <div class="col-md-12">
-                <input id="prixboisson" name="prixboisson"
-                       type="text" placeholder="Prix de la boisson" class="form-control
-                     input-md">
-
-            </div>
-        </div>
-
-        <!-- champ nom-->
+       <!-- champ nom-->
         <div class="form-group">
             <label class="col-md-12 control-label"
                    for="nomboisson">Nom</label>
             <div class="col-md-12">
                 <input id="nomboisson" name="nomboisson"
-                       type="text" placeholder="Nom de la boisson" class="form-control
-                 input-md">
+                       type="text" maxlength="10" placeholder="Nom de la boisson" class="form-control
+                 input-md" required="">
 
             </div>
         </div>
@@ -66,8 +54,20 @@
                    for="codeboisson">code</label>
             <div class="col-md-12">
                 <input id="codeboisson" name="codeboisson"
-                       type="text" placeholder="code de la boisson" class="form-control
-                     input-md">
+                       type="text" size= "3" maxlength="3" placeholder="code de la boisson" class="form-control
+                     input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- champ prix-->
+        <div class="form-group">
+            <label class="col-md-12 control-label"
+                   for="prixboisson">Prix</label>
+            <div class="col-md-12">
+                <input id="prixboisson" name="prixboisson"
+                       type="number" min="1" max="" placeholder="Prix de la boisson" class="form-control
+                     input-md" required="">
 
             </div>
         </div>

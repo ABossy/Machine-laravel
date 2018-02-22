@@ -14,16 +14,6 @@ use App\Vente;
 class BoissonsController extends Controller
 {
 
-    /*public  function show() {
-	$boisson = [
-	"cafelong" => ["prix" => 70],
-    "the" => ["prix"=>60],
-    "Chocolat" => ["prix"=>90],
-    "Cappuccino" => ["prix"=>80],
-];
-	return view('boissons',compact('boisson'));
-}*/ //retourne le nom et le prix de toutes les boissons du tableau 
-	
 	// public function index(){
 	// 	$boissons = boissons::all();
 
