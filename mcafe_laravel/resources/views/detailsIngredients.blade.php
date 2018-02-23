@@ -1,18 +1,18 @@
 @extends('template')
 
 @section('titre')
-Details des Ingredients
+<strong>Details des Ingredients</strong>
 
 @endsection
 
 @section('contenu')
 <table class="table table-striped col-md-12 table-hover">
 
-<tr><td><h4>ID: {{$ingredients-> id}}<br>
+<tr><td><h3>ID: {{$ingredients-> id}}<br>
 	Nom: {{$ingredients-> Nom}} <br> 
 	Stock:  {{$ingredients-> Stock}} <br> code: {{$ingredients-> code}}
 
-</h4></tr></td>
+</h3></tr></td>
     
 </table>
 

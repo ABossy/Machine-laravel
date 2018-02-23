@@ -14,7 +14,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+               
                 color: #636b6f;
                 font-family: 'Raleway';
                 font-weight: 100;
@@ -22,13 +22,15 @@
                 margin: 0;
                 text-align:center;
                 font-size: 15px;
+                background-image: url("cafe.jpeg");
 
 
             }
             
             .navbar {
                 font-size: 25px;
-                margin-bottom:320px;
+                margin-bottom:250px;
+
                
             }
 
@@ -39,6 +41,7 @@
 
             .dropdown{
                 float: right;
+                color: white;
             }
             
             .full-height {

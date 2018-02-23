@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-Liste des Ingredients
+<strong>Liste des Ingredients</strong>
 
 @endsection
 
@@ -10,8 +10,8 @@ Liste des Ingredients
 <table class="table table-striped col-md-12 table-hover">
 
 @foreach($ingredientStock as $keys)
-     <tr><td><h4><strong>{{$keys-> Nom}}</strong><br> ID:{{$keys-> id}} <br>Stock: {{$keys-> Stock}} unité <br>
-    </h4></tr></td>
+     <tr><td><h3><strong>{{$keys-> Nom}}</strong><br> ID:{{$keys-> id}} <br>Stock: {{$keys-> Stock}} unité <br>
+    </h3></tr></td>
     
 {{-- permet de récuperer l'id, nom et stock --}}
     <td><a href="{{route('listeingredients.show',['id'=> $keys-> id])}}">Lien</a></td>

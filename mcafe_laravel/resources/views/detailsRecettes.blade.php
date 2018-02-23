@@ -1,11 +1,16 @@
 @extends('template')
 
 @section('titre')
-Details des Recettes
+<strong>Details des Recettes</strong>
 
 @endsection
 
+@section('image')
+<img src="">
+@endsection
+
 @section('contenu')
+<div id="" style="overflow-y:scroll; height:480px;">
 <table class="table table-striped col-md-12 table-hover">
 	@foreach($details as $detail)
 	<tr>
@@ -40,6 +45,7 @@ Details des Recettes
 		</tr>		
 @endforeach
 	</table>
+</div>	
 @endsection
 	{{-- affichage de mon nom, doses et ingredient sur ma page details --}}
 {{-- ici on appelle la variable detail définit dans le RecetteController qui va chercher les infos dans les differentes tables de la BDD --}} 

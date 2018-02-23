@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-Liste des Recettes
+<strong>Liste des Recettes</strong>
 @endsection
 
 {{-- @section('contenu')

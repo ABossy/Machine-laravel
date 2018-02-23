@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-Liste des ventes
+<strong>Liste des ventes</strong>
 
 @endsection
 
@@ -19,7 +19,7 @@ Liste des ventes
 	@foreach($afficheVentes as $afficheVente)
 	<tr>
 		<td>
-			<h4>
+			<h3>
 				<strong>Date</strong>:{{$afficheVente-> created_at}}
 				<strong>{{$afficheVente-> nomUser}}</strong><br>
 		<strong>Vente N°:{{$afficheVente-> idVente}}<br></strong>
@@ -41,7 +41,7 @@ Liste des ventes
 			</div>
 		</form>	
 
-		</h4>
+		</h3>
 	</td>
 </tr>
 	

@@ -1,8 +1,8 @@
 @extends('template')
 
 @section('titre')
-Machine à Café <br>
-Astrid Bossy
+<strong>Machine à Café <br>
+Astrid Bossy</strong>
 @endsection
 
 @section('image')
@@ -21,7 +21,7 @@ Astrid Bossy
     {{csrf_field()}}
 
     
-<legend>Nouvelle Commande</legend>
+<legend><strong>Nouvelle Commande</strong></legend>
 <!-- champ Client-->
 	<select name="idUser" id="selectbasic" class="form-control">
 		<option selected disabled value="User selection">User 

@@ -67,9 +67,10 @@ Route::put('/modif/ingredient/{id}','IngredientsController@edit')->name('ingredi
 
 // MONNAIE
 
-Route::get('3', 'MonnaieController@show');
+Route::get('3', 'MonnaieController@index');
 //vue monnaie
-
+Route::put('/modif/monnaie/{id}','MonnaieController@edit')->name('monnaie.modif');
+//permet de modifier
 
 // Pages RECETTES
 

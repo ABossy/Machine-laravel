@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-    Liste des Boissons
+<strong>Liste des Boissons</strong>
 
 @endsection
 
@@ -11,8 +11,8 @@
 
         @foreach($boissons as $keys)
             <tr>
-                <td><h4><strong>{{$keys-> Nom}}</strong><br>ID:{{$keys-> id}}<br>Prix:{{$keys-> Prix}}
-                    </h4>
+                <td><h3><strong>{{$keys-> Nom}}</strong><br>ID:{{$keys-> id}}<br>Prix:{{$keys-> Prix}}
+                    </h3>
             </tr></td>
             <td><a href="{{route('boissons.show',['id'=> $keys-> id])}}">Lien</a></td>
 
